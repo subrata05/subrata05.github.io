@@ -21,7 +21,7 @@ title: Home
 
     <!-- Short professional summary -->
     <p class="hero-copy">
-      I'm an Embedded Software Engineer interested in firmware,
+      I'm an Embedded System Engineer interested in firmware,
       microcontrollers, real-time systems, and the details that
       make hardware and software work reliably together.
     </p>
@@ -43,7 +43,7 @@ title: Home
     <div class="social-links">
       <a href="https://github.com/subrata05">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/subratasarkar-ss/">LinkedIn ↗</a>
-      <a href="mailto:YOUR_EMAIL@example.com">Email ↗</a>
+      <a href="ss9sarkar@gmail.com">Email ↗</a>
     </div>
 
   </div>
@@ -92,12 +92,12 @@ title: Home
   </div>
   <div class="timeline">
     <article class="timeline-item">
-      <p class="timeline-date">2026 — Present</p>
-      <div><h3>Embedded Software Engineer</h3><p class="muted">Glide Technology Pvt Ltd</p><p>Update this entry with your current responsibilities and projects as you are able to share them publicly.</p></div>
+      <p class="timeline-date">Sept, 2026 — Present</p>
+      <div><h3>Embedded Software Engineer</h3><p class="muted">Glide Technology Pvt Ltd</p><p>Worked on RTOS based design and integration, BSP Driver, MCU peripheral interfaces and integration</p></div>
     </article>
     <article class="timeline-item">
-      <p class="timeline-date">2024 — 2026</p>
-      <div><h3>Embedded Systems Engineer</h3><p class="muted">Symbica Private Limited</p><p>Worked on embedded firmware for a bionic prosthetic hand, including sensor processing, BLE integration, state-driven control, and testing.</p></div>
+      <p class="timeline-date">Aug, 2024 — Jul, 2026</p>
+      <div><h3>Embedded Systems Engineer</h3><p class="muted">Symbica Private Limited</p><p>Worked on embedded firmware and hardware design, including sensor processing, BLE integration, event-driven control, and HIL testing.</p></div>
     </article>
   </div>
 </section>

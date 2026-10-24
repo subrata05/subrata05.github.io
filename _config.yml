@@ -2,6 +2,10 @@ title: "Subrata Sarkar"
 description: "Embedded Systems Engineer working on firmware, microcontrollers, and hardware-software integration."
 url: "https://subrata05.github.io"
 baseurl: ""
+
+# Add your public profile URLs here. Leave blank to hide the links.
+medium_url: "https://sxvyte.medium.com/"
+hashnode_url: "https://hashnode.com/@sxvyte"
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 timezone: Asia/Kolkata

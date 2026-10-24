@@ -4,33 +4,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f8f8f5">
-    <title>{% if page.title and page.title != "Home" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description | escape }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <title>
+      {% if page.title and page.title != "Home" %}
+        {{ page.title }} ·
+      {% endif %}
+      {{ site.title }}
+    </title>
+
+    <meta
+      name="description"
+      content="{{ page.description | default: site.description | escape }}"
+    >
+
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    >
+
     {% seo %}
     {% feed_meta %}
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-      mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'neutral' });
+    <!-- Mermaid diagram rendering -->
+    <script type="module">
+      import mermaid from
+        'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+      mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: 'strict',
+        theme: 'neutral'
+      });
 
       async function renderMermaidDiagrams() {
-        const blocks = document.querySelectorAll('pre code.language-mermaid, pre code.lang-mermaid');
+        const blocks = document.querySelectorAll(
+          'pre code.language-mermaid, pre code.lang-mermaid'
+        );
+
         for (const code of blocks) {
           const container = document.createElement('div');
           container.className = 'mermaid-diagram';
+
           const diagram = document.createElement('pre');
           diagram.className = 'mermaid';
           diagram.textContent = code.textContent;
+
           container.appendChild(diagram);
           code.closest('pre').replaceWith(container);
         }
 
         if (document.querySelector('.mermaid')) {
           try {
-            await mermaid.run({ querySelector: '.mermaid' });
+            await mermaid.run({
+              querySelector: '.mermaid'
+            });
           } catch (error) {
-            console.error('Unable to render Mermaid diagram:', error);
+            console.error(
+              'Unable to render Mermaid diagram:',
+              error
+            );
           }
         }
       }
@@ -38,37 +70,112 @@
       renderMermaidDiagrams();
     </script>
   </head>
+
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
       <div class="nav-wrap">
-        <a class="brand" href="{{ '/' | relative_url }}">SS<span>.</span></a>
-        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+        <a class="brand" href="{{ '/' | relative_url }}">
+          SS<span>.</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+
         <nav class="site-nav" aria-label="Main navigation">
           <a href="{{ '/about/' | relative_url }}">About</a>
           <a href="{{ '/projects/' | relative_url }}">Projects</a>
           <a href="{{ '/experience/' | relative_url }}">Experience</a>
           <a href="{{ '/blog/' | relative_url }}">Writing</a>
           <a href="{{ '/contact/' | relative_url }}">Contact</a>
-          <a class="nav-resume" href="{{ '/assets/documents/Subrata-Sarkar-Resume.pdf' | relative_url }}">Resume ↗</a>
+
+          <a
+            class="nav-resume"
+            href="{{ '/assets/documents/Subrata-Sarkar-Resume.pdf' | relative_url }}"
+          >
+            Resume ↗
+          </a>
         </nav>
       </div>
     </header>
+
     <main id="main" class="site-main">
       {{ content }}
     </main>
+
     <footer class="site-footer">
-      <div><a class="brand" href="{{ '/' | relative_url }}">SS<span>.</span></a><p>Built with care, maintained with Git.</p></div>
-      <div class="footer-links"><a href="https://github.com/subrata05" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/subratasarkar-ss/" target="_blank" rel="noopener">LinkedIn</a><a href="{{ '/contact/' | relative_url }}">Contact</a></div>
-      <p class="copyright">© {{ 'now' | date: "%Y" }} Subrata Sarkar</p>
+      <div>
+        <a class="brand" href="{{ '/' | relative_url }}">
+          SS<span>.</span>
+        </a>
+        <p>Built with care, maintained with Git.</p>
+      </div>
+
+      <div class="footer-links">
+        <a
+          href="https://github.com/subrata05"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/subratasarkar-ss/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+        {% if site.medium_url %}
+          <a
+            href="{{ site.medium_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medium
+          </a>
+        {% endif %}
+
+        {% if site.hashnode_url %}
+          <a
+            href="{{ site.hashnode_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hashnode
+          </a>
+        {% endif %}
+
+        <a href="{{ '/contact/' | relative_url }}">
+          Contact
+        </a>
+      </div>
+
+      <p class="copyright">
+        © {{ 'now' | date: "%Y" }} Subrata Sarkar
+      </p>
     </footer>
+
     <script>
       const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.site-nav');
+
       if (toggle && nav) {
         toggle.addEventListener('click', () => {
           const open = nav.classList.toggle('is-open');
-          toggle.setAttribute('aria-expanded', String(open));
+
+          toggle.setAttribute(
+            'aria-expanded',
+            String(open)
+          );
         });
       }
     </script>

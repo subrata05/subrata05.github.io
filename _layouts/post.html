@@ -1,12 +1,71 @@
 ---
 layout: default
 ---
+
 <article class="article-page">
-  <a class="back-link" href="{{ '/blog/' | relative_url }}">← All writing</a>
+
+  <a
+    class="back-link"
+    href="{{ '/blog/' | relative_url }}"
+  >
+    ← All writing
+  </a>
+
   <header class="article-header">
-    <p class="eyebrow">WRITING · {{ page.date | date: "%d %B %Y" }}</p>
+    <p class="eyebrow">
+      WRITING · {{ page.date | date: "%d %B %Y" }}
+    </p>
+
     <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+
+    {% if page.description %}
+      <p class="lead">{{ page.description }}</p>
+    {% endif %}
   </header>
-  <div class="prose">{{ content }}</div>
+
+  {% assign show_medium_link = page.medium | default: false %}
+  {% assign show_hashnode_link = page.hashnode | default: false %}
+
+  {% if show_medium_link == true and page.medium_url or show_hashnode_link == true and page.hashnode_url %}
+
+    <aside
+      class="article-external-links"
+      aria-label="Read this article on other platforms"
+    >
+
+      <p class="article-external-links-title">
+        Also published on
+      </p>
+
+      <div class="article-external-links-list">
+
+        {% if show_medium_link == true and page.medium_url %}
+          <a
+            href="{{ page.medium_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read on Medium ↗
+          </a>
+        {% endif %}
+
+        {% if show_hashnode_link == true and page.hashnode_url %}
+          <a
+            href="{{ page.hashnode_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read on Hashnode ↗
+          </a>
+        {% endif %}
+
+      </div>
+    </aside>
+
+  {% endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
 </article>

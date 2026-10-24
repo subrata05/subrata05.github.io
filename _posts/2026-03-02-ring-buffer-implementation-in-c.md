@@ -1,6 +1,6 @@
 ---
 title: "Ring Buffer Implementation in C"
-date: 2026-10-24
+date: 2026-03-02
 description: "Designing a memory-efficient circular buffer in C with wrap-around handling, bulk operations, and zero-copy DMA support for embedded systems."
 categories: [Embedded Systems, C Programming]
 

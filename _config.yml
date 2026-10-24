@@ -7,7 +7,7 @@ baseurl: ""
 medium_url: "https://sxvyte.medium.com/"
 hashnode_url: "https://hashnode.com/@sxvyte"
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 timezone: Asia/Kolkata
 
 collections:

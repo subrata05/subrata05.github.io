@@ -43,7 +43,7 @@ title: Home
     <div class="social-links">
       <a href="https://github.com/subrata05">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/subratasarkar-ss/">LinkedIn ↗</a>
-      <a href="ss9sarkar@gmail.com">Email ↗</a>
+      <a href="mailto:ss9sarkar@gmail.com">Email ↗</a>
     </div>
 
   </div>

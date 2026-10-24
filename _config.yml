@@ -1,0 +1,41 @@
+title: "Subrata Sarkar"
+description: "Embedded Systems Engineer working on firmware, microcontrollers, and hardware-software integration."
+url: "https://subrata05.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+timezone: Asia/Kolkata
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+header_pages:
+  - about.md
+  - projects.md
+  - experience.md
+  - blog.md
+  - contact.md
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

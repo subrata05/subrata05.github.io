@@ -1,0 +1,35 @@
+# Jekyll generated website
+_site/
+
+# Ruby dependencies installed locally
+.bundle/
+
+# Bundler configuration that may contain local settings
+.bundle/config
+
+# Ruby gems installed in the project directory
+vendor/bundle/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# Linux editor and temporary files
+*~
+*.swp
+*.swo
+
+# IDE settings
+.idea/
+.vscode/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log

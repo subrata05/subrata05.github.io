@@ -7,8 +7,7 @@ categories: [Embedded Systems, C Programming]
 medium: true
 medium_url: "https://sxvyte.medium.com/ring-buffer-and-its-implementation-in-c-bd687e40e903"
 
-hashnode: false
-# hashnode_url: "https://yourusername.hashnode.dev/your-article"
+hashnod: false
 ---
 
 A ring buffer is a fundamental data structure in embedded systems, commonly used in UART drivers, communication stacks, DMA pipelines, and real-time applications. It provides a predictable way to handle continuous data streams without shifting existing data or repeatedly allocating memory.

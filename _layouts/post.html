@@ -12,6 +12,7 @@ layout: default
   </a>
 
   <header class="article-header">
+
     <p class="eyebrow">
       WRITING · {{ page.date | date: "%d %B %Y" }}
     </p>
@@ -21,12 +22,25 @@ layout: default
     {% if page.description %}
       <p class="lead">{{ page.description }}</p>
     {% endif %}
+
   </header>
 
-  {% assign show_medium_link = page.medium | default: false %}
-  {% assign show_hashnode_link = page.hashnode | default: false %}
+  {% assign show_medium_link = false %}
+  {% assign show_hashnode_link = false %}
 
-  {% if show_medium_link == true and page.medium_url or show_hashnode_link == true and page.hashnode_url %}
+  {% if page.medium == true or page.medium == "true" %}
+    {% if page.medium_url != blank %}
+      {% assign show_medium_link = true %}
+    {% endif %}
+  {% endif %}
+
+  {% if page.hashnode == true or page.hashnode == "true" %}
+    {% if page.hashnode_url != blank %}
+      {% assign show_hashnode_link = true %}
+    {% endif %}
+  {% endif %}
+
+  {% if show_medium_link or show_hashnode_link %}
 
     <aside
       class="article-external-links"
@@ -39,9 +53,9 @@ layout: default
 
       <div class="article-external-links-list">
 
-        {% if show_medium_link == true and page.medium_url %}
+        {% if show_medium_link %}
           <a
-            href="{{ page.medium_url }}"
+            href="{{ page.medium_url | escape }}"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -49,9 +63,9 @@ layout: default
           </a>
         {% endif %}
 
-        {% if show_hashnode_link == true and page.hashnode_url %}
+        {% if show_hashnode_link %}
           <a
-            href="{{ page.hashnode_url }}"
+            href="{{ page.hashnode_url | escape }}"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -60,6 +74,7 @@ layout: default
         {% endif %}
 
       </div>
+
     </aside>
 
   {% endif %}

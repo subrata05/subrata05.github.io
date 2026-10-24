@@ -1,0 +1,420 @@
+/* ==================================================
+   PORTFOLIO DARK THEME
+   ================================================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #111713;
+  --surface: #19221c;
+  --text: #edf3ee;
+  --muted: #aab8ae;
+  --line: #303d34;
+  --accent: #8bd3ad;
+  --accent-soft: #24392d;
+}
+
+/* Base layout */
+
+:root[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .site-header {
+  background: rgba(17, 23, 19, 0.96);
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .site-nav {
+  color: #d0dbd3;
+}
+
+:root[data-theme="dark"] .nav-resume {
+  border-color: #46564a;
+  color: var(--text);
+}
+
+/* Header buttons */
+
+:root[data-theme="dark"] .menu-toggle,
+:root[data-theme="dark"] .theme-toggle {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+/* Links and accent text */
+
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] h1 span,
+:root[data-theme="dark"] .text-link,
+:root[data-theme="dark"] .card-link,
+:root[data-theme="dark"] .card-arrow,
+:root[data-theme="dark"] .post-arrow,
+:root[data-theme="dark"] .contact-value,
+:root[data-theme="dark"] .prose a {
+  color: var(--accent);
+}
+
+/* Buttons */
+
+:root[data-theme="dark"] .button-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .button-primary:hover {
+  background: #326c50;
+}
+
+/* Cards and containers */
+
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .skip-link {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .tag {
+  background: #2a4234;
+  color: #c5efd5;
+}
+
+:root[data-theme="dark"] .contact-band {
+  background: #20362a;
+}
+
+:root[data-theme="dark"] .contact-band p:not(.eyebrow) {
+  color: #c2d2c7;
+}
+
+/* Blog text */
+
+:root[data-theme="dark"] .prose p,
+:root[data-theme="dark"] .prose li {
+  color: #d0dbd3;
+}
+
+:root[data-theme="dark"] .prose blockquote {
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .prose code,
+:root[data-theme="dark"] code {
+  background: #29342d;
+  color: #e5eee7;
+}
+
+:root[data-theme="dark"] pre,
+:root[data-theme="dark"] .highlight {
+  background: #0b100d;
+  color: #e5eee7;
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .note {
+  background: #202b23;
+  color: var(--muted);
+  border-left-color: #739681;
+}
+
+/* Footer */
+
+:root[data-theme="dark"] .site-footer {
+  border-color: var(--line);
+}
+
+/* Images */
+
+:root[data-theme="dark"] .about-photo,
+:root[data-theme="dark"] .hero-photo,
+:root[data-theme="dark"] .prose img,
+:root[data-theme="dark"] .media-figure img {
+  border-color: var(--line);
+}
+
+/* Tables */
+
+:root[data-theme="dark"] table {
+  border-collapse: collapse;
+  color: var(--text);
+}
+
+:root[data-theme="dark"] th,
+:root[data-theme="dark"] td {
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] th {
+  background: #243129;
+}
+
+:root[data-theme="dark"] tr:nth-child(even) {
+  background: #18211b;
+}
+
+/* Separators */
+
+:root[data-theme="dark"] hr {
+  border-color: var(--line);
+}
+
+/* Form controls */
+
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+/* Category labels */
+
+:root[data-theme="dark"] .category-tag {
+  color: #b7d9f2;
+  border-color: rgba(130, 180, 220, 0.4);
+  background: rgba(100, 140, 180, 0.16);
+}
+
+
+/* ==================================================
+   THEME TOGGLE BUTTON
+   Icon-only design, aligned with the site header.
+   ================================================== */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border: 1px solid #cbd5cd;
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-toggle .theme-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Show the moon by default. JavaScript switches the icons. */
+
+.theme-toggle .theme-icon-moon {
+  display: block;
+}
+
+.theme-toggle .theme-icon-sun {
+  display: none;
+}
+
+/* Keep the button aligned with the rest of the header. */
+
+.nav-wrap > .brand {
+  order: 1;
+}
+
+.nav-wrap > .site-nav {
+  order: 2;
+}
+
+.nav-wrap > .theme-toggle {
+  order: 3;
+}
+
+.nav-wrap > .menu-toggle {
+  order: 4;
+}
+
+
+/* ==================================================
+   MERMAID DIAGRAMS
+   Preserve the complete light-theme appearance,
+   regardless of the website's current theme.
+   ================================================== */
+
+/* White diagram container */
+
+.mermaid-diagram,
+:root[data-theme="dark"] .mermaid-diagram,
+:root[data-theme="dark"] .article-page .mermaid-diagram {
+  background: #ffffff !important;
+  color: #222222 !important;
+  border-color: #e2e5df;
+}
+
+/* Mermaid rendering container */
+
+.mermaid-diagram .mermaid,
+:root[data-theme="dark"] .mermaid-diagram .mermaid,
+:root[data-theme="dark"] .article-page .mermaid-diagram .mermaid {
+  display: flex;
+  justify-content: center;
+
+  min-width: max-content;
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff !important;
+  color: #222222 !important;
+
+  text-align: center;
+}
+
+/* SVG canvas */
+
+.mermaid-diagram svg,
+:root[data-theme="dark"] .mermaid-diagram svg,
+:root[data-theme="dark"] .article-page .mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+
+  background: #ffffff !important;
+  color: #222222 !important;
+}
+
+/*
+ * Preserve light-theme text colors in SVG diagrams.
+ * Mermaid generally renders labels as SVG text elements.
+ */
+
+:root[data-theme="dark"] .mermaid-diagram svg text,
+:root[data-theme="dark"] .mermaid-diagram svg tspan {
+  fill: #222222;
+}
+
+/*
+ * Preserve readable labels when Mermaid uses foreignObject.
+ */
+
+:root[data-theme="dark"] .mermaid-diagram svg foreignObject,
+:root[data-theme="dark"] .mermaid-diagram svg foreignObject div,
+:root[data-theme="dark"] .mermaid-diagram svg foreignObject span,
+:root[data-theme="dark"] .mermaid-diagram svg foreignObject p {
+  color: #222222 !important;
+  background-color: transparent !important;
+}
+
+/*
+ * Do not apply the portfolio's dark-theme code-block
+ * colors to Mermaid diagram containers.
+ */
+
+:root[data-theme="dark"] .mermaid-diagram pre,
+:root[data-theme="dark"] .mermaid-diagram code,
+:root[data-theme="dark"] .mermaid-diagram .highlight {
+  background: #ffffff !important;
+  color: #222222 !important;
+  border-color: transparent;
+}
+
+/*
+ * Keep Mermaid node, edge, and label backgrounds
+ * controlled by the diagram's own generated styles.
+ *
+ * The Mermaid initialization in default.html should
+ * use theme: 'default' and light themeVariables.
+ */
+
+
+/* ==================================================
+   RESPONSIVE HEADER
+   ================================================== */
+
+@media (max-width: 720px) {
+  .nav-wrap {
+    position: relative;
+  }
+
+  /*
+   * Header order on mobile:
+   * Brand | Menu | Theme icon
+   * Navigation appears on the next row when opened.
+   */
+
+  .nav-wrap > .brand {
+    order: 1;
+  }
+
+  .nav-wrap > .menu-toggle {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-wrap > .theme-toggle {
+    order: 3;
+    margin-left: 0;
+  }
+
+  .nav-wrap > .site-nav {
+    order: 4;
+  }
+
+  .site-nav .theme-toggle {
+    margin: 8px 0 0;
+    align-self: flex-start;
+  }
+}
+
+
+/* ==================================================
+   RESPONSIVE MERMAID DIAGRAMS
+   ================================================== */
+
+@media (max-width: 600px) {
+  .mermaid-diagram {
+    padding: 12px;
+    margin: 18px 0;
+    overflow-x: auto;
+  }
+
+  .article-page .mermaid-diagram {
+    padding: 12px;
+  }
+
+  .mermaid-diagram svg {
+    max-width: none;
+  }
+}
+
+
+/* ==================================================
+   ACCESSIBILITY
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}

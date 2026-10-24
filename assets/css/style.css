@@ -1071,3 +1071,60 @@ h3 { font-size: 1.1rem; letter-spacing: -.025em; line-height: 1.35; }
     grid-row: 1 / span 2;
   }
 }
+
+/* Italicized article description */
+.article-description {
+  font-style: italic;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Article category container */
+.article-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Highlighted category tags */
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(100, 140, 180, 0.35);
+  border-radius: 999px;
+  background: rgba(100, 140, 180, 0.12);
+  color: var(--accent-color, #4f86b5);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.category-tag:hover {
+  background: rgba(100, 140, 180, 0.2);
+  border-color: rgba(100, 140, 180, 0.6);
+}
+
+/* Tighten spacing below article categories */
+.article-categories {
+  margin-bottom: 0.25rem;
+}
+
+/* Also published on block */
+.article-external-links {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Balance spacing before the article content */
+.article-external-links + .prose {
+  margin-top: 1rem;
+}

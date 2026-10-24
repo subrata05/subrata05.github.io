@@ -4,6 +4,8 @@ date: 2026-05-03
 description: "A state-machine-based approach to deep sleep, wake-up scheduling, and reducing pin-state current on the AVR128DA48."
 categories: [Embedded Systems, AVR, Low-Power Design]
 
+medium: true
+medium_url: "https://sxvyte.medium.com/avr128da48-low-power-design-sleep-modes-peripheral-shutdown-and-leakage-current-control-eeb192e5d238?sharedUserId=sxvyte"
 hashnode: true
 hashnode_url: "https://sxvyte.hashnode.dev/avr128da48-low-power-design-sleep-modes-peripheral-shutdown-and-leakage-current-control"
 ---

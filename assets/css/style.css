@@ -42,7 +42,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .skip-link:focus { left: 1rem; top: 1rem; }
 
-.site-header { border-bottom: 1px solid var(--line); background: rgba(248,248,245,.94); }
+.site-header { position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--line); background: rgba(248,248,245,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
 .nav-wrap { max-width: var(--max); margin: auto; padding: 0 28px; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 

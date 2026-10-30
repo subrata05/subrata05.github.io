@@ -1,0 +1,28 @@
+/* ==================================================
+   STICKY HEADER
+   Keeps the top header visible while scrolling,
+   on both desktop and mobile. Colours are inherited
+   from style.css and theme.css (light and dark).
+   ================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10; /* below .skip-link (z-index: 20) */
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Anchor links should not land underneath the sticky header. */
+html {
+  scroll-padding-top: 90px;
+}
+
+/* Mobile: an opened menu must never grow taller than the screen. */
+@media (max-width: 720px) {
+  .site-header {
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow-y: auto;
+  }
+}

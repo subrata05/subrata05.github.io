@@ -1,0 +1,58 @@
+/* ==================================================
+   MOBILE DROPDOWN MENU
+   On small screens the opened menu floats over the
+   page as a dropdown under the header instead of
+   pushing the page content down.
+   Toggle behaviour is unchanged (.site-nav.is-open).
+   ================================================== */
+
+@media (max-width: 720px) {
+
+  /* The dropdown is absolutely positioned, so the header
+     no longer needs to scroll or clip its own content. */
+  .site-header {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-wrap > .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    width: auto;
+    padding: 6px 20px 14px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+    max-height: calc(100vh - 68px);
+    max-height: calc(100dvh - 68px);
+    overflow-y: auto;
+  }
+
+  .nav-wrap > .site-nav.is-open {
+    animation: menu-drop 0.16s ease-out;
+  }
+
+  .site-nav a {
+    padding: 10px 0;
+  }
+}
+
+@keyframes menu-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-wrap > .site-nav.is-open {
+    animation: none;
+  }
+}
